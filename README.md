@@ -48,8 +48,8 @@ Things you may want to cover:
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user-id|integer|null:false,foreign_key: true|
-|group-id|integer|null:false,foreign_key: true|
+|user_id|integer|null:false,foreign_key: true|
+|group_id|integer|null:false,foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
@@ -59,8 +59,8 @@ Things you may want to cover:
 |------|----|-------|
 |text|text||
 |image|string||
-|user-id|integer|null:false,foreign_key: true|
-|group-id|integer|null:false,foreign_key: true|
+|user_id|integer|null:false,foreign_key: true|
+|group_id|integer|null:false,foreign_key: true|
 
 ### Association
 - belongs_to :group
