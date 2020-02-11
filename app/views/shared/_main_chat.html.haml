@@ -1,0 +1,31 @@
+.main_chat
+  .main_chat__group_info
+    .main_chat__group_info__left_box
+      %p.main_chat__group_info__left_box__current-group
+        新鮮組
+      %ul.main_chat__group_info__left_box__member-list
+        Member :
+        %li
+          samurai
+    .main_chat__group_info__btn
+      =link_to "#",class:"" do
+        Edit  
+
+  .main_chat__message
+    .main_chat__message__list
+      .main_chat__message__list__upper_info
+        %p.main_chat__message__list__upper_info__talker
+          samurai2
+        %p.main_chat__message__list__upper_info__date
+          2020/02/11(Tue)13:10:10
+      %p.main_chat__message__list__text
+        獅子孫々    
+
+  .main_chat__message_form
+    %form.new_message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder:"type a messege"}
+        %label{class: "input-box__image"}
+          =icon('fas','image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn",value: "Send"}    
