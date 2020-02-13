@@ -39,23 +39,26 @@
       }
     }
   }
-  &__group{
+  &__groups-list{
     width:100%;
     height:calc(100vh - 100px);
     background-color: #2f3e51;
     padding-top:20px;
     padding-left:20px;
-    &__name{
-      color:#ffffff;
-      font-weight:bold;
-      display:block;
-      font-size:15px;
-      margin-bottom:5px;
-    }
-    &__message{
-      color:white;
-      font-weight:bold;
-      display:block;
+    &__group{
+
+      &__name{
+        color:#ffffff;
+        font-weight:bold;
+        display:block;
+        font-size:15px;
+        margin-bottom:5px;
+      }
+      &__message{
+        color:white;
+        font-weight:bold;
+        display:block;
+      }
     }
   }
   }

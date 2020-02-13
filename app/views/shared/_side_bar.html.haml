@@ -5,7 +5,7 @@
         = current_user.name
       %ul.side_bar__user_name__top_item__icon 
         %li
-          =link_to "#",class:"side_bar__user_name__top_item__icon--btn" do
+          =link_to new_group_path(current_user),class:"side_bar__user_name__top_item__icon--btn" do
             =icon('fas','edit',)
         %li    
           =link_to edit_user_path(current_user),class:"side_bar__user_name__top_item__icon--btn" do
@@ -14,9 +14,12 @@
             
 
     
-  .side_bar__group
-    %p.side_bar__group__name
-      新鮮組
-    %p.side_bar__group__message
-      獅子孫々  
+  .side_bar__groups-list
+    - current_user.groups.each do |group|
+      .side_bar__groups-list__group
+        = link_to '#' do
+          .side_bar__groups-list__group__name
+            = group.name
+          .side_bar__groups-list__group__message
+            メッセージはまだありません 。
 
