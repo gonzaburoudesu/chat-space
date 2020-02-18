@@ -59,7 +59,9 @@ $('#new_message').on('submit', function(e){
   })
   .fail(function(){
     alert('error');
+  })
+  .always(function(){
+    $('.submit-btn').prop('disabled', false);
   });
-  return false;
 })
 });
