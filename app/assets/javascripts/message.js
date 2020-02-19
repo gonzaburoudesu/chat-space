@@ -64,4 +64,28 @@ $('#new_message').on('submit', function(e){
     $('.submit-btn').prop('disabled', false);
   });
 })
+  var reloadMessages = function() {
+    last_message_id = $('.main_chat__message:last').data("message-id");
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      if (messages.length !== 0) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+      });
+      $('.main_chat__message').append(insertHTML);
+      $('.main_chat__message').animate({ scrollTop: $('.main_chat__message')[0].scrollHeight});
+      }
+    })
+    .fail(function() {
+    });
+  };
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+  setInterval(reloadMessages, 7000);
+  }
 });
